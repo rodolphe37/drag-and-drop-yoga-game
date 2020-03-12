@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+#particle {
+  margin-top: -24vh;
+  max-width: 46vmin;
+  margin-left: -91vw;
+  position: absolute;
+}

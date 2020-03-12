@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import Game from './game';
+import reducer from './reducers';
+
+const store = createStore(reducer);
+
+ReactDOM.render(
+    <Provider store={store}>
+
+    <div className="header">
+      <img className="App-logo" src={require('./logo.svg')} alt=""/>
+      <h1>Match3 Yoga Game</h1>
+      <br />
+      <p>By Rodolphe Augusto</p>
+    </div>
+        <Game />
+    </Provider>,
+    document.getElementById('root')
+)
