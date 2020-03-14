@@ -16,13 +16,13 @@ class Panel extends React.Component {
   }
 
   render(score) {
-    const { state } = this.props;
+    const { state, gameScore } = this.props;
 
     return (
       <div className="info">
       <Animation />
         <div className="info-block">
-        <Timer />
+        <Timer score={gameScore}/>
           <div className="info-item">Score:</div>
           <div className="info-item">{ state.info.score }</div>
         </div>

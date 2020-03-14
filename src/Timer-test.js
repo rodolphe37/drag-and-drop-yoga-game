@@ -79,12 +79,13 @@ export default class Timer extends React.Component {
   };
 
   render(){
-    const { gameState, timeLeft } = this.state;
+    const { gameState, timeLeft, gameScore } = this.state;
     return (
       <div>
       <HeaderTime gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
       {this.state.gameState !== GAME_STATE.PLAYING && (
         <Modal
+          score={gameScore}
           startGame={this.startGame}
           resetGame={this.resetGame}
           timeLeft={timeLeft}
