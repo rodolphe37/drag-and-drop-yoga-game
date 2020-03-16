@@ -18,13 +18,9 @@ export const GAME_STATE = {
   DONE: 'done',
 };
 
-export function getTotalScore(score, timeLeft) {
-  const gameScore = Object.values(score).reduce(
-    (sum) => sum,
-    0
-  );
-  const timeBonus = getSeconds(timeLeft);
-  return gameScore ? gameScore + timeBonus : 0;
+export function getTotalScore(score) {
+  const { gameScore } = score;
+  return gameScore;
 }
 
 
